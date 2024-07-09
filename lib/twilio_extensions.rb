@@ -11,7 +11,7 @@ module TwilioExtensions
     def create(attrs)
       client = @version.instance_variable_get(:@domain).client
       TwilioMock::Mocker.new(username: client.account_sid, token: client.auth_token).create_message(attrs) if TwilioMock::Testing.enabled?
-      super(attrs)
+      super(**attrs)
     end
   end
 
@@ -19,7 +19,7 @@ module TwilioExtensions
     def create(attrs)
       client = @version.instance_variable_get(:@domain).client
       TwilioMock::Mocker.new(username: client.account_sid, token: client.auth_token).buy_number(attrs) if TwilioMock::Testing.enabled?
-      super(attrs)
+      super(**attrs)
     end
   end
 

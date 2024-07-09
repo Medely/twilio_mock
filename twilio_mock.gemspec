@@ -6,8 +6,8 @@ Gem::Specification.new do |s|
   s.authors     = ['Maicol Bentancor']
   s.files       = Dir['lib/**/*.rb']
   s.license       = 'MIT'
-  s.required_ruby_version = '>= 2.2'
+  s.required_ruby_version = '>= 3.0'
 
-  s.add_dependency 'twilio-ruby', '~> 5.31', '>= 5.31.1'
+  s.add_dependency 'twilio-ruby', '~> 5.7'
   s.add_dependency 'webmock', '~> 3.0', '>= 2'
 end
