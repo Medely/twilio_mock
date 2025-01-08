@@ -24,7 +24,7 @@ module TwilioExtensions
   end
 
   module Lookups
-    def fetch(*)
+    def fetch(**kwargs)
       client = @version.instance_variable_get(:@domain).client
       TwilioMock::LookupMocker.new(username: client.account_sid, token: client.auth_token).lookup(@solution[:phone_number]) if TwilioMock::Testing.enabled?
       super
